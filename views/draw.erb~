@@ -1,0 +1,33 @@
+</head>
+<body>
+	<table>
+		<tr>
+			<td>
+				<img src="/nm.png?<%= Time.now.to_i %>" />
+			</td>
+			<td>
+				<b>Параметры:</b>
+				<table>
+					Уравнение: <%=pipa.inspect%>					
+					<% for i in 0...3 %>
+					<tr><td>
+						x[<%=(i+1)%>] = <%= ex.draw_points[0][i].inspect%>
+					</td></tr>
+					<% end %>
+				<br />
+				</table>
+				<b>Результаты:</b>
+				<table>
+					<% for i in 0...3 %>
+					<tr><td>
+						x[<%=(i+1)%>] = <%= ex.draw_points[-1][i].inspect%>
+					</td></tr>
+					<% end %>
+					<tr><td>Минимум функции: <%=ex.points[0].y%></td></tr>
+					<tr><td><form action = "/" method = "get"> <input type="submit" value="нозад!" /> </form></td></tr>
+				</table>				
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<form action="/nelder_mead_method" method="post">
+	<table>
+		<hr>
+		<h4> Nelder-Mead </h4>
+		<tr>
+			<td><label for="function">Уравнение:</label></td>
+			<td><input id="function" name="function" type="text" size="20" value="a**2 + b**2"/></td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td>Первая точка: </td>
+			<td><input id="x0_1" name="x0_1" type="text" size="3" value="5.0"/></td>
+			<td><input id="x0_2" name="x0_2" type="text" size="3" value="1.0"/></td>
+		</tr>
+		<tr>
+			<td>Вторая точка: </td>
+			<td><input id="x1_1" name="x1_1" type="text" size="3" value="4.0"/></td>
+			<td><input id="x1_2" name="x1_2" type="text" size="3" value="2.0"/></td>
+		</tr>
+		<tr>
+			<td>Третья точка: </td>
+			<td><input id="x2_1" name="x2_1" type="text" size="3" value="6.0"/></td>
+			<td><input id="x2_2" name="x2_2" type="text" size="3" value="4.0"/></td>
+		</tr>
+
+        <tr>
+			<td>Alpha: </td>
+			<td><input id="alpha" name="alpha" type="text" size="3" value="1.0"/></td>
+		</tr>
+
+        <tr>
+			<td>Beta: </td>
+			<td><input id="beta" name="beta" type="text" size="3" value="0.5"/></td>
+		</tr>
+        <tr>
+			<td>Gamma: </td>
+			<td><input id="gamma" name="gamma" type="text" size="3" value="2.0"/></td>
+		</tr>
+
+
+	</table>
+	<br />
+	<input type="submit" value="Паехале!" />
+</form>

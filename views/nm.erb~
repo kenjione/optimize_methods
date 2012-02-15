@@ -1,0 +1,21 @@
+<h1>Приветствую тебя, мой юный запиливатель!</h1>
+<table>
+		<tr>
+			<hr>
+			<h4> Nelder-Mead </h4>
+			<tr>
+				<td><label for="example">Уравнение:</label></td>
+				<td><input id="example" name="example_" type="text" /></td>
+			</tr>
+
+			<tr>
+				<td align="left">Первая точка:</td>
+				<td align="center">Вторая точка:</td>
+				<td align="right">Третья точка:</td>
+			</tr>
+			<tr>
+				<td><label for="x0">Х0[1]:</label></td>
+				<td><input id="x0" name="x0_value" type="text" /></td>
+			</tr>
+		</tr>
+</table>

@@ -1,0 +1,42 @@
+</head>
+<body>
+	<table>
+		<tr>
+			<td>
+                <img src="/function.png?<%= Time.now.to_i %>" />
+
+			</td>
+			<td>
+				<b>Параметры:</b>
+				<table>
+					Уравнение: <%=result.func.inspect%>
+					<% for i in 0..1 %>
+					<tr><td>
+						x[<%=(i+1)%>] = <%= print_float(result.draw_points[0][i])%>
+					</td></tr>
+					<% end %>
+                 </table>
+				<br />
+        </tr>
+        <tr>
+            <td>
+                <img src="<%="/"+params[:name].to_s%>.png?<%= Time.now.to_i %>" />
+            </td>
+
+            <td>
+                <b>Результаты:</b>
+                <table>
+                    <% for i in 0..1 %>
+                    <tr><td>
+                        x[<%=(i+1)%>] = <%= print_float(result.draw_points[-1][i])%>
+                    </td></tr>
+                    <% end %>
+                    <tr><td>Минимум функции: <%=print_float(result.y[-1])%></td></tr>
+                    <tr><td><form action = "/" method = "get"> <input type="submit" value="взад!" /> </form></td></tr>
+                </table>
+
+            </td>
+		</tr>
+	</table>
+</body>
+</html>
