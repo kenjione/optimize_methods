@@ -1,8 +1,0 @@
-<html>
-<head>
-	<title>diploid yeah</title>
-</head>
-<body>
-<%= yield %>
-</body>
-</html>
