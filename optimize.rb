@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'active_support/inflector'
-#require File.dirname(__FILE__)+"/methods/rozenbrok_method.rb"
 require File.dirname(__FILE__)+"/methods/drawplot.rb"
 require File.dirname(__FILE__)+"/methods/base_optimize_method"
 
@@ -23,15 +22,12 @@ get '/' do
 end
 
 get '/:name' do |name|
-    #result = name.camelize.constantize.find_extremum(params)
     erb :"#{name}/form"
 end
 
 post '/:name' do |name|
-
   result = name.camelize.constantize.find_extremum(params)
   drawplot(result.draw_points, name.to_s)
   drawfunc(result.func)
   erb :"/#{name}/handler", locals: {params: params, result: result}
-
 end
