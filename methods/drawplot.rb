@@ -21,11 +21,7 @@ def drawplot(drawpoints, name)
 		end
 	end
 
-
-  puts "------------- DRAWPLOT -----------------"
-
-
-	path = "../public/#{name}.png"
+	path = File.dirname(__FILE__) + "/../public/#{name}.png"
 
 	Gnuplot.open do |gp|
 	  Gnuplot::Plot.new( gp ) do |plot|
@@ -56,7 +52,7 @@ def drawfunc(func)
 		if func[i]=="b" then func[i] = "y" end
 	end
 	
-	path = "../public/function.png"
+	path = File.dirname(__FILE__)+"/../public/function.png"
 
 	Gnuplot.open do |gp|
 	  Gnuplot::SPlot.new( gp ) do |plot|
