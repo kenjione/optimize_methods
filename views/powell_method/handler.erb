@@ -1,23 +1,7 @@
 </head>
 <body>
 	<table>
-		<tr>
-			<td>
-                <img src="/function.png?<%= Time.now.to_i %>" />
-
-			</td>
-			<td>
-				<b>Параметры:</b>
-				<table>
-					Уравнение: <%=result.func.inspect%>
-					<% for i in 0..1 %>
-					<tr><td>
-						x[<%=(i+1)%>] = <%= result.draw_points[0][i].inspect%>
-					</td></tr>
-					<% end %>
-                 </table>
-				<br />
-        </tr>
+         <%= render_output_form(result)%>
         <tr>
             <td>
                 <img src="<%="/"+params[:name].to_s%>.png?<%= Time.now.to_i %>" />

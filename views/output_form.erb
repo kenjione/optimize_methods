@@ -4,15 +4,15 @@
         <img src="/function.png?<%= Time.now.to_i %>" />
     </td>
     <td>
-        <b>Параметры:</b>
+        <b>Параметры:</b><br>
         <table>
-          <%if result.draw_points[0][0].is_a?(Array); num_of_points=result.draw_points[0][0].size
-            else num_of_points=1
+          <%if result.draw_points[0][0].is_a?(Array); num_of_points=result.draw_points[0].size
+            else num_of_points=2
             end%>
             Уравнение: <%=result.func%>
             <% for i in 0...num_of_points %>
             <tr><td>
-                x[<%=(i+1)%>] = <%= if num_of_points==1; print_float(result.draw_points[0][i])
+                x[<%=(i+1)%>] = <%= if num_of_points==2; print_float(result.draw_points[0][i])
                                     else result.draw_points[0][i].each {|p| print_float(p.to_f, 1)} end%>
             </td></tr>
             <% end %>
