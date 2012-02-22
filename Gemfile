@@ -1,4 +1,4 @@
 source :rubygems
 gem 'sinatra'
-gem 'active_support'
+gem 'activesupport'
 gem 'gnuplot'
