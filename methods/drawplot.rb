@@ -22,9 +22,6 @@ def drawplot(drawpoints, name)
 	end
 
 
-  puts "------------- DRAWPLOT -----------------"
-
-
 	path = File.dirname(__FILE__) + "/../public/#{name}.png"
 
 	Gnuplot.open do |gp|
