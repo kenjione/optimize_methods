@@ -5,7 +5,7 @@ class BaseOptimizeMethod
 
   def self.require_methods
     methods_files = methods_file_list
-    puts methods_files.inspect
+    #puts methods_files.inspect
     methods_files.each { |method| require File.dirname(__FILE__) + '/' + method }
 	#Dir.chdir("../")
     #
@@ -37,7 +37,7 @@ class BaseOptimizeMethod
   end
 
   def self.methods_file_list
-    Dir.chdir(File.dirname(__FILE__))
-    Dir['*_method.rb'] - [File.basename(__FILE__)]
+    #Dir.chdir(File.dirname(__FILE__))
+    Dir["#{File.dirname(__FILE__)}/*_method.rb"].map { |file_name| File.basename(file_name) } - [File.basename(__FILE__)]
   end
 end
