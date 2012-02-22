@@ -7,7 +7,6 @@ class RozenbrokMethod < BaseOptimizeMethod
   attr_accessor :func, :x, :d, :alpha, :beta, :eps, :i, :y, :dx, :N, :k, :n, :shitstep, :lambda, :x_res, :a, :draw_points
 
   def self.find_extremum(params)
-    puts params.inspect
     new([params[:x1].to_f, params[:x2].to_f], params[:function].to_s, params[:alpha].to_f, params[:beta].to_f, params[:epsilon].to_f)
   end
 
