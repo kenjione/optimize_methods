@@ -26,7 +26,7 @@ def drawplot(drawpoints, name)
 
 
 	path = File.dirname(__FILE__) + "/../public/#{name}.png"
-  puts "ololo " +  path.inspect
+
 	Gnuplot.open do |gp|
 	  Gnuplot::Plot.new( gp ) do |plot|
 
