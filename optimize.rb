@@ -15,6 +15,10 @@ helpers do
   def print_float(float, acc = 3)
     "%.#{acc}f" % float
   end
+
+  def render_output_form(result)
+    erb(:output_form, locals: {result: result})
+  end
 end
 
 get '/' do
