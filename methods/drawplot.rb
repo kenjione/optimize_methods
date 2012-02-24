@@ -47,11 +47,7 @@ def drawplot(drawpoints, name)
 end
 
 def drawfunc(func)
-	for i in 0...func.size do 
-		if func[i]=="a" then func[i] = "x" end
-		if func[i]=="b" then func[i] = "y" end
-	end
-	
+		
   path = File.dirname(__FILE__) + "/../public/function.png"
 
 	Gnuplot.open do |gp|
