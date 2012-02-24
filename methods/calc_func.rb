@@ -2,7 +2,7 @@ include Math
 def call_userfunc(userfunc_str, args)
   #puts args.inspect
 	if args.is_a?(Array)
-		variables = ('a'..'z').to_a.join(', ')
+		variables = (('x'..'z').to_a + ('a'...'x').to_a).join(', ')
 		eval("#{variables} = *args\n" + userfunc_str)
 	elsif args.is_a?(Hash)
 		vars, values = args.to_a.transpose.map { |arr| arr.join(', ') }
