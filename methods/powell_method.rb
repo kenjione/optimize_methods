@@ -2,7 +2,7 @@ require File.dirname(__FILE__)+"/calc_func.rb"
 
 
 class PowellMethod
-  attr_accessor  :x , :draw_points, :func, :y
+  attr_accessor  :x , :draw_points, :func, :y , :y_res
   def self.find_extremum(params)
     new([params[:x1].to_f,params[:x2].to_f], params[:function], params[:eps].to_f)
   end
@@ -34,6 +34,9 @@ class PowellMethod
     @x.push(@y[-1])
     norm = Math.sqrt((@x[-1][0] - @x[-2][0])**2 + (@x[-1][1] - @x[-2][1])**2)
     if norm < @eps then
+
+      @y_res = calc(@y[-1])
+      puts @y_res.inspect
     else
       temp_d2 = Array.new(@d[2])
       for i in 0..1

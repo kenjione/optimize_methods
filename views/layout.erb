@@ -1,30 +1,21 @@
 <html>
 <head>
 	<title>Optimize</title>
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css"/>
+
 </head>
-<body>
-<img src="/Chuck_seal.png" align = "right" width = "320" height = "300" hspace = "46" />
 
+<body >
+    <img src="/Chuck_seal.png" align = "right" width = "320" height = "300" hspace = "46" />
 
-<%= yield %>
+    <%= yield %>
 
-<style type="text/css">
-  #footer {
-    width: 90%; /* ширина футера */
-    height: 55px; /* высота */
-    text-align: center;
-    position: relative; /* абсолютное позиционирование */
-    bottom: 0; /* прижимаем к нижнему краю обертки */
-
-    /*color: #fff;*/
-    /*background: #000;*/
-   }
-</style>
-
-<div id="footer">
-  <%=  link_to('© 2011-2012 R.Arifulov, A.Chernyshev.', 'https://github.com/kenjione/optimize_methods')%> <br />
-  special thanks to <%= link_to('G.Averchuk','https://github.com/newmen') %>.
-</div>
+    <div id="footer">
+      © 2011-2012 <%=link_to('R.Arifulov','https://github.com/utoplenick')%>, <%=link_to('A.Chernyshev','https://github.com/kenjione')%>. <br />
+      special thanks to <%= link_to('G.Averchuk','https://github.com/newmen') %>. <br/>
+      optimize methods on <%= link_to('github', 'https://github.com/kenjione/optimize_methods')%>
+    </div>
 
 </body>
 </html>

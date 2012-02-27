@@ -16,8 +16,8 @@ helpers do
     "%.#{acc}f" % float
   end
 
-  def render_output_form(result)
-    erb(:output_form, locals: {result: result})
+  def render_output_form(result, params)
+    erb(:output_form, locals: {result: result, params: params})
   end
 end
 
@@ -30,8 +30,12 @@ get '/:name' do |name|
 end
 
 post '/:name' do |name|
+
+  params[:function] = params[:opt_type].to_s + "*(" + params[:function].to_s + ")"
+  params[:opt_type]= params[:opt_type].to_f
+  params[:opt_type] == -1.0 ? params[:extremum] = "Max" : params[:extremum] = "Min"
   result = name.camelize.constantize.find_extremum(params)
   drawplot(result.draw_points, name.to_s)
-  drawfunc(result.func)
+  drawfunc(result.func[4...-1])
   erb :"/#{name}/handler", locals: {params: params, result: result}
 end

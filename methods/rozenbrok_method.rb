@@ -1,10 +1,8 @@
 require "matrix"
-require File.dirname(__FILE__)+"/base_optimize_method.rb"
 require File.dirname(__FILE__)+"/calc_func.rb"
-require "sinatra"
 
-class RozenbrokMethod < BaseOptimizeMethod
-  attr_accessor :func, :x, :d, :alpha, :beta, :eps, :i, :y, :dx, :N, :k, :n, :shitstep, :lambda, :x_res, :a, :draw_points
+class RozenbrokMethod
+  attr_accessor :func, :x, :y, :x_res, :draw_points, :y_res
 
   def self.find_extremum(params)
     new([params[:x1].to_f, params[:x2].to_f], params[:function].to_s, params[:alpha].to_f, params[:beta].to_f, params[:epsilon].to_f)
@@ -105,6 +103,8 @@ class RozenbrokMethod < BaseOptimizeMethod
 
     if self.norm <= @eps then
       @x_res = @x[-1]
+      puts @draw_points[-1].inspect
+      @y_res = calc(@draw_points[-1])
       return
     else
       @lambda = Matrix[[@x[-1][0] - @x[-2][0]],[@x[-1][1] - @x[-2][1]]]

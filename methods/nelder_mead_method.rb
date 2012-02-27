@@ -19,7 +19,7 @@ class Point
 end
 
 class NelderMeadMethod
-  attr_accessor :points, :draw_points, :alpha, :beta, :gamma, :func
+  attr_accessor :points, :draw_points, :alpha, :beta, :gamma, :func , :y_res
 
   def self.find_extremum(params)
     Point.setfunc(params[:function].to_s)
@@ -56,6 +56,7 @@ class NelderMeadMethod
       sum+= ((p.calc - f_c)**2)
     }
     if Math.sqrt(sum/3.0) < 0.0001 then
+      @y_res = @points[0].calc
       return
     end
     point_r = Point.new([0.0, 0.0])
