@@ -31,7 +31,7 @@ def drawplot(drawpoints, name)
 		plot.grid
 		plot.xrange "[" + (a[0].min-1).to_s +  ":" + (a[0].max+1).to_s + "]"
 		plot.yrange "[" + (a[1].min-1).to_s +  ":" + (a[1].max+1).to_s + "]"
-
+    plot.obj "1 rectangle behind from screen 0,0 to screen 1,1 fillstyle solid 0.3 fillcolor rgb 'gray'"
 		plot.title  "#{name}"
 		plot.ylabel "x2"
 		plot.xlabel "x1"
@@ -54,9 +54,10 @@ def drawfunc(func)
 	  Gnuplot::SPlot.new( gp ) do |plot|
 
 		plot.output path
-		plot.terminal 'png truecolor'
+		plot.terminal 'png truecolor transparent xffffff'
 		plot.grid
-
+    plot.obj "1 rectangle behind from screen 0,0 to screen 1,1 fillstyle solid 0.2 fillcolor rgb 'gray'"
+    #plot.obj '1 fillstyle solid 0.0 rgbcolor "black"'
 		plot.ylabel "x2"
 		plot.xlabel "x1"
 
