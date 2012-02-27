@@ -1,9 +1,7 @@
 require "matrix"
-require File.dirname(__FILE__)+"/base_optimize_method.rb"
 require File.dirname(__FILE__)+"/calc_func.rb"
-require "sinatra"
 
-class RozenbrokMethod < BaseOptimizeMethod
+class RozenbrokMethod
   attr_accessor :func, :x, :y, :x_res, :draw_points, :y_res
 
   def self.find_extremum(params)
