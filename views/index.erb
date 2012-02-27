@@ -5,4 +5,19 @@
 <%= link_to('NelderMead', '/nelder_mead_method') %> <br />
 <%= link_to('Rozenbrok', '/rozenbrok_method') %> <br />
 
+<style type="text/css">
+  #footer {
+    width: 90%; /* ширина футера */
+    height: 55px; /* высота */
+    text-align: center;
+    position: absolute; /* абсолютное позиционирование */
+    bottom: 0; /* прижимаем к нижнему краю обертки */
+    /*color: #fff;*/
+    /*background: #000;*/
+   }
+</style>
 
+<div id="footer">
+  <%=  link_to('© 2011-2012 R.Arifulov, A.Chernyshev.', 'https://github.com/kenjione/optimize_methods')%> <br />
+  special thanks to <%= link_to('G.Averchuk','https://github.com/newmen') %>.
+</div>
