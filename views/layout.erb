@@ -4,6 +4,27 @@
 </head>
 <body>
 <img src="/Chuck_seal.png" align = "right" width = "320" height = "300" hspace = "46" />
+
+
 <%= yield %>
+
+<style type="text/css">
+  #footer {
+    width: 90%; /* ширина футера */
+    height: 55px; /* высота */
+    text-align: center;
+    position: relative; /* абсолютное позиционирование */
+    bottom: 0; /* прижимаем к нижнему краю обертки */
+
+    /*color: #fff;*/
+    /*background: #000;*/
+   }
+</style>
+
+<div id="footer">
+  <%=  link_to('© 2011-2012 R.Arifulov, A.Chernyshev.', 'https://github.com/kenjione/optimize_methods')%> <br />
+  special thanks to <%= link_to('G.Averchuk','https://github.com/newmen') %>.
+</div>
+
 </body>
 </html>
