@@ -11,4 +11,4 @@
 
 ##
 
-Пощупать проект можно [тут](http://www.optimize.newmen.pro)
+Пощупать проект можно [тут](http://optimize.newmen.pro)
