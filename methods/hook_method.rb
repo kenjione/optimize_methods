@@ -9,10 +9,10 @@ require File.dirname(__FILE__)+"/calc_func.rb"
 
 class HookMethod
 
-  attr_accessor :draw_points, :x, :func, :y
+  attr_accessor :draw_points, :x, :func, :y, :y_res
 
   def self.find_extremum(params)
-    new(params[:function].to_s, [params[:x1].to_f,params[:x2].to_f], params[:eps].to_f, params[:lambda].to_f, params[:alpha].to_f, params[:step1].to_f, params[:step2].to_f)
+    new(params[:function], [params[:x1].to_f,params[:x2].to_f], params[:eps].to_f, params[:lambda].to_f, params[:alpha].to_f, params[:step1].to_f, params[:step2].to_f)
   end
 
   def initialize(func,x0, eps, lambda, alpha, step1, step2)
@@ -26,6 +26,7 @@ class HookMethod
     @y = [x0.dup,x0.dup,x0.dup]
     @draw_points  = Array.new
     @draw_points.push(x0.dup)
+    @y_res
     step_2
   end
 
@@ -60,6 +61,7 @@ class HookMethod
       step_2
     else
       if @step[0] < @eps and @step[1] < @eps
+        @y_res = calc(@y[-1])
       else
         @step[0] /= @alpha
         @step[1] /= @alpha

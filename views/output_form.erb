@@ -1,3 +1,5 @@
+<table>
+
 <tr>
     <td>
         <img src="/function.png?<%= Time.now.to_i %>" />
@@ -8,7 +10,8 @@
           <%if result.draw_points[0][0].is_a?(Array); num_of_points=result.draw_points[0].size
             else num_of_points=2
             end%>
-            Уравнение: <%=result.func%>
+            Уравнение:<br/>
+            <%=result.func[4...-1]%>
             <% for i in 0...num_of_points %>
             <tr><td>
                 x[<%=(i+1)%>] = <%= if num_of_points==2; print_float(result.draw_points[0][i])
@@ -18,4 +21,36 @@
         <br />
         </table>
 </tr>
+
+<tr>
+    <td>
+        <img src="<%="/"+params[:name].to_s%>.png?<%= Time.now.to_i %>" />
+    </td>
+
+    <td>
+        <b>Результаты:</b>
+        <table>
+
+          <% if num_of_points == 3 %>
+              <% for i in 0...3 %>
+              <tr><td>
+                  x[<%=(i+1)%>] = [<%= print_float(result.draw_points[-1][i][0])%>,<%= print_float(result.draw_points[-1][i][1])%>]
+              </td></tr>
+              <% end %>
+          <% else %>
+
+            <% for i in 0..1 %>
+            <tr><td>
+                x[<%=(i+1)%>] = <%= print_float(result.draw_points[-1][i])%>
+            </td></tr>
+            <% end %>
+          <% end %>
+            <tr><td><%=params[:extremum]%> функции: <%=print_float(params[:opt_type]*result.y_res)%></td></tr>
+            <tr><td><form action = "/" method = "get"> <input type="submit" value="взад!" /> </form></td></tr>
+        </table>
+    </td>
+</tr>
+
+</table>
+
 
