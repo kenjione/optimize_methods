@@ -37,12 +37,12 @@ post '/:name' do |name|
 
 
   begin
-  timeout(3) {
-    result = name.camelize.constantize.find_extremum(params)
-    drawplot(result.draw_points, name.to_s)
-    drawfunc(result.func[4...-1])
-    erb :"/#{name}/handler", locals: {params: params, result: result}
-  }
+    timeout(2) do
+      result = name.camelize.constantize.find_extremum(params)
+      drawplot(result.draw_points, name.to_s)
+      drawfunc(result.func[4...-1])
+      erb :"/#{name}/handler", locals: {params: params, result: result}
+    end
 
   rescue TimeoutError => err
     #puts err.message
