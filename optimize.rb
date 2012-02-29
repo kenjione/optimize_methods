@@ -34,8 +34,22 @@ post '/:name' do |name|
   params[:function] = params[:opt_type].to_s + "*(" + params[:function].to_s + ")"
   params[:opt_type]= params[:opt_type].to_f
   params[:opt_type] == -1.0 ? params[:extremum] = "Max" : params[:extremum] = "Min"
-  result = name.camelize.constantize.find_extremum(params)
-  drawplot(result.draw_points, name.to_s)
-  drawfunc(result.func[4...-1])
-  erb :"/#{name}/handler", locals: {params: params, result: result}
+
+
+  begin
+  timeout(3) {
+    result = name.camelize.constantize.find_extremum(params)
+    drawplot(result.draw_points, name.to_s)
+    drawfunc(result.func[4...-1])
+    erb :"/#{name}/handler", locals: {params: params, result: result}
+  }
+
+  rescue TimeoutError => err
+    #puts err.message
+    erb :error, locals: {err: err}
+
+  rescue Exception => err
+    #puts err.message
+    erb :error, locals: {err: err}
+  end
 end
