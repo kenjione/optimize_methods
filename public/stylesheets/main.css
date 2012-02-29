@@ -1,0 +1,27 @@
+@font-face {
+	font-family: Georgia; /* имя шрифта для CSS правил */
+	src: local("Georgia"), /* проверяем наличие шрифта в ОС пользователя */
+	   url(http://ifont.ru/fonts/antiqua/rus/Georgia.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+}
+
+#form {
+	font-family: Georgia;
+	font-weight: normal;
+}
+
+body {
+    background-image: url('../fon1.jpg');
+    background-attachment: fixed;
+}
+#footer {
+
+    font-family: Georgia;
+    font-weight: normal;
+    width: 90%; /* ширина футера */
+    height: 55px; /* высота */
+    text-align: center;
+    position: relative; /* абсолютное позиционирование */
+    bottom: 0; /* прижимаем к нижнему краю обертки */
+    /*color: #fff;*/
+    /*background: #000;*/
+}
