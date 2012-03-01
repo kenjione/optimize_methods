@@ -1,0 +1,31 @@
+<style type="text/css">
+    body {
+        background-image: url('error2.jpg');
+        background-attachment: fixed;
+    }
+
+    #exception {
+        border-color: black;
+    }
+</style>
+
+<hr/>
+<div id="form">
+
+  <div id="exception" style="font-family: Arial">
+    <%
+       case err.message
+       when "execution expired" then
+    %>
+        У введенной функции отсутсвует искомый экстремум
+    <% else %>
+
+        Введен неправильный параметр
+    <% end %>
+
+    <tr><td><form action = "/" method = "get"> <input type="submit" value="взад!" /> </form></td></tr>
+
+
+  </div>
+
+</div>

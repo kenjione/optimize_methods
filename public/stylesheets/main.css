@@ -1,12 +1,13 @@
 @font-face {
 	font-family: Georgia; /* имя шрифта для CSS правил */
 	src: local("Georgia"), /* проверяем наличие шрифта в ОС пользователя */
-	   url(http://ifont.ru/fonts/antiqua/rus/Georgia.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+	   url('../Georgia.ttf'); /* если шрифт не установлен, тогда загружаем его по указанному пути */
 }
 
 #form {
 	font-family: Georgia;
 	font-weight: normal;
+    height: 87%;
 }
 
 body {
