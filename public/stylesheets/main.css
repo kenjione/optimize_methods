@@ -1,12 +1,17 @@
 @font-face {
-	font-family: Georgia; /* имя шрифта для CSS правил */
-	src: local("Georgia"), /* проверяем наличие шрифта в ОС пользователя */
-	   url('../Georgia.ttf'); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+    font-family: Georgia; /* имя шрифта для CSS правил */
+    src: local("Georgia"), /* проверяем наличие шрифта в ОС пользователя */ url('../Georgia.ttf'); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+
+}
+
+@font-face {
+    font-family: HeinrichScript;
+    src: local("HeinrichScript"), url('../HeinrichScript.ttf');
 }
 
 #form {
-	font-family: Georgia;
-	font-weight: normal;
+    font-family: Georgia;
+    font-weight: normal;
     height: 87%;
 }
 
@@ -14,6 +19,7 @@ body {
     background-image: url('../fon1.jpg');
     background-attachment: fixed;
 }
+
 #footer {
 
     font-family: Georgia;
@@ -25,4 +31,44 @@ body {
     bottom: 0; /* прижимаем к нижнему краю обертки */
     /*color: #fff;*/
     /*background: #000;*/
+}
+
+.left_col_method,
+.right_col_method {
+    width: 35%;
+    height: 40%;
+    background: url("../paper.png") no-repeat;
+    background-size: contain;
+    background-position: top left;
+
+    border-color: black;
+    text-align: center;
+    font-size: 16;
+    vertical-align: middle;
+}
+
+.left_col_method {
+    float: left;
+    margin-left: 1%
+}
+
+.right_col_method {
+    margin-left: 40%;
+}
+
+.method_text {
+    font-family: HeinrichScript;
+    font-weight: normal;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+
+}
+
+.text_form {
+    display: table;
+
+    margin-left: 12%;
+    margin-right: 12%;
+    height: 100%;
 }

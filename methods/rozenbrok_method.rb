@@ -103,7 +103,6 @@ class RozenbrokMethod
 
     if self.norm <= @eps then
       @x_res = @x[-1]
-      puts @draw_points[-1].inspect
       @y_res = calc(@draw_points[-1])
       return
     else

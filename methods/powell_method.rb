@@ -34,9 +34,7 @@ class PowellMethod
     @x.push(@y[-1])
     norm = Math.sqrt((@x[-1][0] - @x[-2][0])**2 + (@x[-1][1] - @x[-2][1])**2)
     if norm < @eps then
-
       @y_res = calc(@y[-1])
-      puts @y_res.inspect
     else
       temp_d2 = Array.new(@d[2])
       for i in 0..1
