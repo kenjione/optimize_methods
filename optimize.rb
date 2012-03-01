@@ -19,6 +19,10 @@ helpers do
   def render_output_form(result, params)
     erb(:output_form, locals: {result: result, params: params})
   end
+
+  def render_input_function_form(func="x**2 + y**2 - 2 * x * sin(y) - 3 * sin(x) * y")
+    erb :input_function_form, locals: {func: func}
+  end
 end
 
 get '/' do
@@ -35,8 +39,7 @@ post '/:name' do |name|
   params[:opt_type]= params[:opt_type].to_f
   params[:opt_type] == -1.0 ? params[:extremum] = "Max" : params[:extremum] = "Min"
 
-
-  begin
+   begin
     timeout(2) do
       result = name.camelize.constantize.find_extremum(params)
       drawplot(result.draw_points, name.to_s)
@@ -51,5 +54,6 @@ post '/:name' do |name|
   rescue Exception => err
     #puts err.message
     erb :error, locals: {err: err}
+
   end
 end
