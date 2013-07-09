@@ -1,5 +1,4 @@
-require File.dirname(__FILE__)+"/gnuplot.rb"
-
+require 'gnuplot'
 
 def drawplot(drawpoints, name)
 	a = [[],[]]
